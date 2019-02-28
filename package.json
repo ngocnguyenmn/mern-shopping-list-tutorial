@@ -1,0 +1,21 @@
+{
+  "name": "mern-shopping-list",
+  "version": "1.0.0",
+  "description": "Shopping list built with the MERN stack",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "Stephen Chen",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.16"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
