@@ -1,12 +1,17 @@
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING } from '../actions/types';
+import {
+  GET_ITEMS,
+  ADD_ITEM,
+  DELETE_ITEM,
+  ITEMS_LOADING
+} from "../actions/types";
 
 const initialState = {
   items: [],
   loading: false
-}
+};
 
 export default function(state = initialState, action) {
-  switch(action.type) {
+  switch (action.type) {
     case GET_ITEMS:
       return {
         ...state,
@@ -33,4 +38,4 @@ export default function(state = initialState, action) {
         ...state
       };
   }
-};
+}

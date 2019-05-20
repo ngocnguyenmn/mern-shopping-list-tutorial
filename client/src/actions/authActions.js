@@ -11,7 +11,6 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAIL
 } from "./types";
-import Axios from "axios";
 
 // Check token & load user
 export const loadUser = () => (dispatch, getState) => {
