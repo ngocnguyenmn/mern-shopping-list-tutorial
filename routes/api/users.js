@@ -54,10 +54,13 @@ router.post('/', (req, res) => {
                 }
               )
             })
-          .then(() => true);
+            .catch (() => res.json({ msg: 'bad this'}))
+          .then(() => true)
+          .catch (() => res.json({ msg: 'bad this'}));
         })
       })
     })
+    .catch (() => res.json({ msg: 'bad this'}));
 });
 
 module.exports = router;

@@ -47,7 +47,9 @@ router.post('/', (req, res) => {
             }
           )
         })
+        .catch (() => res.json({ msg: 'bad this'}));
     })
+    .catch (() => res.json({ msg: 'bad this'}));
 });
 
 // @route   GET api/auth/user
@@ -56,7 +58,8 @@ router.post('/', (req, res) => {
 router.get('/user', auth, (req, res) => {
   User.findById(req.user.id)
     .select('-password')
-    .then(user => res.json(user));
+    .then(user => res.json(user))
+    .catch (() => res.json({ msg: 'bad this'}));
 });
 
 module.exports = router;
