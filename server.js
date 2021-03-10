@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-const config = require('config');
+require('dotenv').config();
 
 const app = express();
 
@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 // DB Config
-const db = config.get('mongoURI');
+const db = process.env.MONGO_URI;
 // Connect to Mongo
 mongoose
   .connect(db, {
@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
   
   app.get('*', (req, res) => {
-    res.sendFild(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
 
